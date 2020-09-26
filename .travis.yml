@@ -1,17 +1,22 @@
-language: cpp
-os:
-  - linux
+os: linux
 
-dist: bionic
-
-services:
-  - docker
+virt: lxd
 
 jobs:
   include:
-    - arch: amd64
-    - arch: arm64
-    - arch: ppc64le
+    - dist: xenial
+      arch: amd64
+    - dist: xenial
+      arch: arm64
+    - dist: xenial
+      arch: ppc64le
+
+    - dist: focal
+      arch: amd64
+    - dist: focal
+      arch: arm64
+    - dist: focal
+      arch: ppc64le
 
 script:
   - ./kill_time.sh
