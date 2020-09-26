@@ -1,0 +1,17 @@
+language: cpp
+os:
+  - linux
+
+dist: bionic
+
+services:
+  - docker
+
+jobs:
+  include:
+    - arch: amd64
+    - arch: arm64
+    - arch: ppc64le
+
+script:
+  - ./kill_time.sh
